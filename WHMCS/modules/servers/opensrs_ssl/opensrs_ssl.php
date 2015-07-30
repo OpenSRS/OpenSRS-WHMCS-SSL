@@ -969,7 +969,7 @@ function opensrs_ssl_AdminServicesTabFieldsSave($params)
     }
     
     $subject  = openssl_csr_get_subject($csr);
-    $domain = $subject['CN'];
+    $domain = $params['domain'];
     mysql_safequery("UPDATE tblhosting SET domain = ? WHERE id = ?", array($domain, $params['serviceid']));
 }
 
@@ -1211,7 +1211,11 @@ function opensrs_ssl_SSLStepTwo($params)
     }
     
     //Prepare CSR
-    $csr = trim($params['configdata']['csr']);
+    if(isset($params['configdata']['csr']))
+        $csr = trim($params['configdata']['csr']);
+    else    
+        $csr = trim($params['csr']);
+        
     $csr = trim(preg_replace('/(.*)CERTIFICATE(.*)/','',$csr));
     $csr = "-----BEGIN CERTIFICATE REQUEST-----\n".$csr."\n-----END CERTIFICATE REQUEST-----";
     $csr = trim($csr);
@@ -1273,7 +1277,10 @@ function opensrs_ssl_sslstepthree($params)
 {
     $_LANG = opensrs_ssl_loadLanguage();
     //Prepare CSR
-    $csr = $params['configdata']['csr'];
+    if(isset($params['configdata']['csr']))
+        $csr = trim($params['configdata']['csr']);
+    else    
+        $csr = trim($params['csr']);
     $csr = trim($params['configdata']['csr']);
     $csr = trim(preg_replace('/(.*)CERTIFICATE(.*)/','',$csr));
     $csr = "-----BEGIN CERTIFICATE REQUEST-----\n".$csr."\n-----END CERTIFICATE REQUEST-----";
