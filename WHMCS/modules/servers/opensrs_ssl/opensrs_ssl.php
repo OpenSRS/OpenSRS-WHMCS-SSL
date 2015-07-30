@@ -232,7 +232,6 @@ function opensrs_ssl_getRequiredContacts($t)
             'trustwave_premiumssl_wildcard',
             //THAWTE
             'ssl123',
-            'sgcsuper_certs',
             'sslwebserver',
             'sslwebserver_ev',
             'sslwebserver_wildcard',
@@ -254,7 +253,6 @@ function opensrs_ssl_getRequiredContacts($t)
             'securesite_pro_ev',
             //THAWTE
             'ssl123',
-            'sgcsuper_certs',
             'sslwebserver',
             'sslwebserver_ev',
             'sslwebserver_wildcard',
@@ -277,7 +275,6 @@ function opensrs_ssl_getRequiredContacts($t)
             'securesite_pro_ev',
             //THAWTE
             'ssl123',
-            'sgcsuper_certs',
             'sslwebserver',
             'sslwebserver_ev',
             'sslwebserver_wildcard',
@@ -304,7 +301,6 @@ function opensrs_ssl_getRequiredContacts($t)
             'truebizid_ev',
             //THAWTE
             'ssl123',
-            'sgcsuper_certs',
             'sslwebserver',
             'sslwebserver_ev',
             'sslwebserver_wildcard',
@@ -353,7 +349,6 @@ function opensrs_ssl_getCertType($type = null)
         'Symantec - SecureSite Pro With EV'             =>  'securesite_pro_ev',
         //THAWTE
         'Thawte - SSL123'                               =>  'ssl123',
-        'Thawte - SGC SuperCerts'                       =>  'sgcsuper_certs',
         'Thawte - SSL Webserver Certificate'            =>  'sslwebserver',
         'Thawte - SSL Webserver Certificate with EV'    =>  'sslwebserver_ev',
         'Thawte - SSL Webserver Certificate Wildcard'   =>  'sslwebserver_wildcard',
